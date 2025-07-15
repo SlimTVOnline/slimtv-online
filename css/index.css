@@ -1,0 +1,1415 @@
+:root {
+  --primary-color: #580050;
+  --primary-color-hover : #a30090;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0px;
+  background-color: #ffffff;
+  color: #5a5959;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.bg-light {
+  background-color: #ffffff !important;
+}
+
+.form-control::placeholder {
+  color: rgba(202, 202, 202, 0.75);
+  opacity: 1;
+}
+
+/* Estilo do Header */
+.header {
+  position: absolute;
+  top: 20px;
+  width: 100%; /* O header ocupa 100% da largura da página */
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo do header */
+  background-color: rgba(248, 248, 248, 0.75);
+  padding: 15px 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+}
+
+.btn-primary{
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+.btn-primary:hover{
+  background-color: var(--primary-color-hover) !important;
+}
+
+/* Centralização do conteúdo dentro do header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%; /* Defina o tamanho menor que 100% para manter margens nos lados */
+  max-width: 1200px; /* Define uma largura máxima */
+  margin: 0 auto; /* Centraliza o conteúdo dentro do header */
+}
+
+/* Estilo da logo */
+.header img {
+  width: 150px;
+}
+
+/* Estilo do menu */
+.nav-menu {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Links do menu */
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+/* Efeito hover nos links do menu */
+.nav-menu a:hover {
+  color: var(--primary-color-hover);
+}
+
+/* Estilo do botão Painel Cliente */
+.header .btn-cliente {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+
+/* Hover no botão */
+.header .btn-cliente:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/* Menu Responsivo */
+@media (min-width: 992px) {
+  .header .nav-menu {
+    display: flex;
+    margin-left: 20px;
+  }
+  .navbar-toggler {
+    display: none;
+  }
+  .header .offcanvas-toggler {
+    display: none;
+  }
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 992px) {
+  .header {
+    position: absolute;
+    background: #ffffffa1;
+    border-radius: 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    top: 0px;
+  }
+  .header img {
+    width: 120px;
+  }
+
+  /* Oculta o menu no mobile */
+  .header .nav-menu {
+    display: none;
+  }
+
+  /* Exibe o botão de offcanvas (menu) no meio */
+  .header .offcanvas-toggler {
+    display: block;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    order: 2; /* Define a ordem para ficar no meio */
+  }
+
+  /* Botão "Painel Cliente" no final (esquerdo) */
+  .header .btn-cliente {
+    order: 3; /* Define a ordem para ficar à direita */
+    margin-left: auto; /* Move o botão "Painel Cliente" para o final */
+  }
+
+  /* Inverte a posição dos elementos */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%2872,72,72,1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  width: 30px;
+  height: 30px;
+}
+
+.offcanvas-body {
+  background: #c6c6c6;
+}
+
+.header .btn-cliente:hover {
+  background-color: var(--primary-color-hover);
+}
+
+/* Offcanvas Menu */
+.offcanvas-header {
+  background-color: var(--primary-color);
+}
+
+.offcanvas-title {
+  color: #fff;
+}
+.btn-close-white {
+  background-color: transparent; /* Remove o fundo */
+  filter: invert(1); /* Para garantir que o X fique branco */
+  width: 1.5rem; /* Ajuste o tamanho se necessário */
+  height: 1.5rem;
+}
+
+.offcanvas-body a {
+  color: var(--primary-color);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 15px;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+/* Alterar o fundo e cor do texto do cabeçalho */
+.accordion-header .accordion-button {
+  background-color: #ffffff; 
+  color: var(--primary-color);
+  border: none;
+}
+
+/* Cor padrão da seta do acordeão */
+.accordion-button::after {
+  content: "";
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns%3d%27http%3a//www.w3.org/2000/svg%27 fill%3d%27%23ffffff%27 viewBox%3d%270 0 16 16%27%3e%3cpath fill-rule%3d%27evenodd%27 d%3d%27M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e');
+  transform: rotate(0deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Cor e rotação da seta quando o acordeão está aberto */
+.accordion-button:not(.collapsed)::after {
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns%3d%27http%3a//www.w3.org/2000/svg%27 fill%3d%27%23FFD700%27 viewBox%3d%270 0 16 16%27%3e%3cpath fill-rule%3d%27evenodd%27 d%3d%27M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e');
+  transform: rotate(180deg);
+}
+
+
+.accordion-header .accordion-button:not(.collapsed) {
+  background-color: var(--primary-color);
+  color: #ffffff; 
+  box-shadow: none; 
+}
+
+
+.accordion-button.collapsed {
+  background-color: #E1E1E1;
+  color: var(--primary-color);
+}
+
+
+/* Estilizar o corpo do acordeão */
+.accordion-body {
+  background-color: #ffffff; 
+  color: #333; 
+  padding: 20px;
+  border-top: 1px solid var(--primary-color);
+}
+
+/* Personalizar a borda do item do acordeão */
+.accordion-item {
+  border: none;
+  margin-bottom: 10px; 
+}
+
+
+
+/* Alterar a cor da borda da seta ícone */
+.accordion-button::after {
+  color: #ffffff;
+  font-size: 1.2rem; 
+}
+
+/* Alterar hover e foco */
+.accordion-button:hover, .accordion-button:focus {
+  background-color: var(--primary-color);
+  color: white; 
+}
+/* Adicionar uma transição suave para a abertura */
+.accordion-button {
+  transition: background-color 0.3s ease;
+}
+
+.accordion-collapse {
+  transition: all 0.3s ease;
+}
+
+
+
+/* Animacoes de Slide */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.6s ease-in-out;
+}
+
+.slide-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Estilos para animações da direita para a esquerda */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s ease-in-out;
+}
+
+.slide-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide de baixo para cima */
+.slide-in-bottom {
+  opacity: 0;
+  transform: translateY(100%);
+  /* Inicia fora da tela, vindo de baixo */
+  transition: all 0.9s ease-in-out;
+}
+
+.slide-in-bottom.show {
+  opacity: 1;
+  transform: translateY(0);
+  /* Finaliza no local original */
+}
+
+/* Slide de cima para baixo */
+.slide-in-top {
+  opacity: 0;
+  transform: translateY(-100%);
+  /* Inicia fora da tela, vindo de cima */
+  transition: all 0.9s ease-in-out;
+}
+
+.slide-in-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  /* Finaliza no local original */
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 692px;
+  background-image: url("../images/gma_iptv_fundo.webp");
+  /* Substitua com seu URL */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 0 15px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), #181718);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin-top: 163px;
+}
+
+.hero-content2 {
+  position: relative;
+  z-index: 2;  
+  margin-top: 163px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 17px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.hero a {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 18px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;  
+  font-size: 15px;
+  margin-bottom: 32px;
+  transition: background-color 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: var(--primary-color-hover);
+  color: #fff;
+}
+
+
+
+.hero-image {
+  position: relative;
+  z-index: 2;
+  max-width: 470px;
+  margin-top: 118px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* Hero Section secundário com menor altura */
+.hero-secondary {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 0 15px;
+  padding-top: 60px; /* Adiciona um espaçamento superior para não sobrepor o header */
+}
+
+/* Sobreposição para a imagem de fundo */
+.hero-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.64);
+  z-index: 1;
+}
+
+/* Breadcrumb dentro do Hero */
+.hero-secondary .breadcrumb {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+  margin-bottom: -6rem;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 95px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #f8f9fa; /* Cor do link do breadcrumb */
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: #a40080; /* Cor para o item ativo no breadcrumb */
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #c1c1c1 !important;
+}
+
+/* Conteúdo do Hero */
+.hero-secondary .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  color: #fff;
+}
+
+.hero-secondary h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.hero-secondary p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-secondary {
+      padding: 20px;
+  }
+
+  .hero-secondary h1 {
+      font-size: 2rem;
+  }
+
+  .hero-secondary p {
+      font-size: 1rem;
+  }
+}
+
+
+
+/* Section Icons Below Hero */
+.icon-section {
+  background-color: var(--primary-color);
+  padding: 4px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.icon-section .container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.icon-box {
+  flex: 1;
+  padding: 3px;
+  border-right: 1px solid var(--primary-color-hover);
+}
+
+.icon-box:last-child {
+  border-right: none;
+}
+
+.icon-box img {
+  width: 31px;
+  height: auto;
+}
+
+.icon-box p {
+  margin-top: 0px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin-top: 100px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .hero-image img {
+    height: 335px;
+    transform: rotate(-15deg);
+  }
+
+  .icon-section .container {
+    flex-direction: column;
+  }
+
+  .icon-box {
+    border-right: none;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 15px;
+  }
+
+  .icon-box:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Seção de Planos */
+/* Seção de Planos com imagem de fundo full-width */
+.planos-iptv-section {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url("../images/fundoprecos.webp");
+  /* Substitua pela sua imagem */
+  background-size: cover;
+  background-position: bottom;
+}
+
+.destaque {
+  background-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+.destaque .price {
+  color: #fff !important;
+}
+
+.destaque .btn {
+  background-color: #fff !important;
+  color: var(--primary-color) !important;
+}
+
+/* Adicionando uma camada de sobreposição escura */
+.planos-iptv-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.79);
+  /* Escurece a imagem com 70% de opacidade */
+  z-index: 1;
+  /* Garante que o conteúdo esteja acima da sobreposição */
+}
+
+/* Conteúdo dentro da seção */
+.planos-iptv-section .content {
+  position: relative;
+  z-index: 2;
+  /* Garante que o conteúdo esteja acima da sobreposição */
+  color: #fff;
+  /* Texto branco para melhor contraste */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilizando os cards para que fiquem sobrepostos na imagem */
+.planos-cards {
+  position: relative;
+  z-index: 10;
+}
+
+.planos-cards h2,
+.planos-cards p,
+.planos-cards label {
+  color: #fff;
+}
+
+/* Estilo dos cards */
+.plan-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  border-top: 5px solid var(--primary-color);
+}
+
+/* Margem para desktop (telas maiores que 768px) */
+@media (min-width: 768px) {
+  .planos-cards {
+    margin-top: -360px;
+  }
+}
+
+/* Margem para celular (telas menores que 768px) */
+@media (max-width: 767px) {
+  .planos-cards {
+    margin-top: -310px;
+  }
+}
+
+.plan-card p {
+  color: #5a5959;
+}
+
+.plan-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.plan-card .price {
+  font-size: 28px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.plan-card ul li {
+  margin-bottom: 10px;
+}
+
+.plan-card ul li:before {
+  content: "✔";
+  margin-right: 10px;
+  color: #fff;
+  background-color: #029736;
+  border-radius: 50%;
+  padding: 5px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para itens indisponíveis */
+/* Estilos para itens indisponíveis com círculo */
+.plan-card ul li.unavailable:before {
+  content: "✘";
+  margin-right: 10px;
+  color: #fff;
+  background-color: #d00a2e;
+  border-radius: 50%;
+  padding: 5px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan-card .btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsividade: cards ocupam 100% da largura no mobile */
+@media (max-width: 768px) {
+  .planos-cards {
+    top: -50px;
+    /* Ajusta a sobreposição para mobile */
+  }
+
+  .plan-card {
+    margin: 20px;
+  }
+  .lancamento-badge {
+    top: -31px !important;
+    right: 23px !important;
+  }
+}
+
+.lancamento-badge {
+  position: absolute;
+  top: -32px;
+  right: -21px;
+  background-image: url("../images/combo.webp");
+  background-size: cover;
+  color: transparent;
+  width: 189px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Garantia */
+.guarantee {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: #232020;
+  color: #ffffff;
+}
+
+.footer h5 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.footer a {
+  color: #62e078;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer p {
+  font-size: 14px;
+}
+
+.footer i {
+  font-size: 18px;
+}
+
+.footer .fa-facebook-f,
+.fa-twitter,
+.fa-instagram,
+.fa-linkedin {
+  background-color: #62e078;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.footer hr {
+  border: none;
+  width: 100%;
+  height: 1px;
+  background-color: #847a83;
+  opacity: inherit !important;
+}
+
+/* Estilo da logo pequena no rodapé */
+.footer-logo {
+  width: 154px;
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+}
+
+/* Estilo para os cards de pagamento e segurança */
+.payment-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  padding: 15px;
+  transition: transform 0.3s ease;
+}
+
+.payment-card img {
+  max-height: 60px; /* Altura máxima para as imagens */
+  max-width: 100%; /* Garante que as imagens não ultrapassem o card */
+  object-fit: contain;
+}
+
+.payment-card:hover {
+  transform: scale(1.05); /* Efeito hover */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .payment-card {
+    height: 80px; /* Reduz a altura dos cards no celular */
+  }
+
+  .payment-card img {
+    max-height: 50px; /* Reduz o tamanho das imagens no celular */
+  }
+}
+
+.copyright {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.copyright p {
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .plan-cards {
+    flex-direction: column;
+  }
+}
+
+.bg-custom {
+  background-color: #232020;
+  color: #ffffff;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-color);
+}
+
+.icon-box p.text-smaller {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #e0e0e0;
+  /* Cor ajustada para um contraste menor */
+}
+
+.card p.font-weight-bold {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.icon-box svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+  .icon-box svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card p.font-weight-bold {
+    font-size: 14px;
+  }
+
+  .icon-box p.text-smaller {
+    font-size: 12px;
+  }
+
+  .card {
+    padding: 10px;
+  }
+}
+
+.compativel {
+  background: var(--primary-color);
+  border-radius: 29px;
+  padding: 39px;
+  color: white;
+}
+
+.diferenciais {
+  background: var(--primary-color);
+  border-radius: 29px;
+  padding: 39px;
+  color: white;
+}
+
+.diferenciais li {
+  margin-bottom: 21px;
+  margin-top: 20px;
+}
+
+/* Margem no topo para celular (dispositivos menores que 768px) */
+@media (max-width: 767px) {
+  .diferenciais {
+    margin-top: 30px;
+    /* Ajuste o valor conforme necessário */
+  }
+}
+
+/* Carrosel Avaliaçoes */
+
+/* Carrosel Avaliaçoes */
+
+.carousel-inner {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 100%; /* Garante que o conteúdo do carrossel não ultrapasse a tela */
+  overflow: hidden; /* Evita que o conteúdo extrapole */
+  display: flex; /* Adiciona flex para centralizar */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  position: relative;
+}
+
+.carousel-item {
+  text-align: center;
+  color: #333;
+  max-width: 80%; /* Limita a largura máxima do texto */
+  margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.carousel-item p {
+  font-size: 18px;
+  font-weight: 400;
+  word-wrap: break-word; /* Garante que o texto não ultrapasse os limites do container */
+}
+
+.carousel-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 50%; /* Adiciona bordas arredondadas para as imagens */
+}
+
+.carousel-item span {
+  display: block;
+  font-weight: 600;
+  margin-top: 15px;
+  color: var(--primary-color);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente os controles */
+  transform: translateY(-50%);
+}
+
+.carousel-indicators {
+  bottom: -20px; /* Aumenta o espaço entre o conteúdo e os indicadores */
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel-item p {
+    font-size: 16px;
+    max-width: 90%; /* Ajuste para telas menores */
+    margin: 0 auto;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 45%; /* Ajusta a posição dos controles em telas menores */
+  }
+}
+
+.iptv-section {
+ 
+  color: #434343;
+}
+
+.iptv-image {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.iptv-text {
+  flex: 1.5;
+}
+
+.iptv-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.iptv-section p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.features {
+  display: flex;
+  gap: 20px;
+}
+
+.feature img {
+  max-width: 60px;
+}
+
+.feature p {
+  font-size: 14px;
+}
+
+/* Margem no topo para celular (dispositivos menores que 768px) */
+@media (max-width: 767px) {
+  .iptv-text {
+    margin-top: 30px;
+    /* Ajuste o valor conforme necessário */
+  }
+}
+
+
+.benefit-card {
+  background-color: #f8f9fa;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+}
+
+.benefit-icon {
+  width: 70px;
+  margin-bottom: 15px;
+}
+
+.parallax-section {
+  background: url('/static/images/parallax-image.jpg') center center/cover no-repeat;
+  color: white;
+  padding: 60px 0;
+}
+
+.parallax-section h2 {
+  font-size: 2.5rem;
+}
+
+.period-selector {
+  position: relative;
+  display: flex;
+  justify-content: space-between; /* Ajusta o espaçamento entre os itens */
+  background-color: #f1f1f1ad;
+  border-radius: 30px;
+  padding: 10px 15px; /* Ajuste de padding para centralizar e espaçar os itens */
+  margin: 0 auto; /* Centraliza o elemento na página */
+  max-width: 600px; /* Define uma largura máxima */
+  width: 100%; /* Ocupa toda a largura disponível */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge de promoção */
+.period-selector .option.promotion {
+  position: relative;
+}
+
+.period-selector .option.promotion-5::after {
+  content: "15% OFF";
+  position: absolute;
+  top: -6px;
+  right: 48px;
+  font-weight: lighter !important;
+  background-color: #d8d8d8;
+  color: #960303;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 11px;
+  z-index: 4;
+}
+
+.period-selector .option.promotion-10::after {
+  content: "20% OFF";
+  position: absolute;
+  top: -6px;
+  right: 48px;
+  font-weight: lighter !important;
+  background-color: #d8d8d8;
+  color: #960303;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 11px;
+  z-index: 4;
+}
+
+.period-selector .option.promotion-20::after {
+  content: "30% OFF";
+  position: absolute;
+  top: -6px;
+  right: 43px;
+  font-weight: lighter !important;
+  background-color: #d8d8d8;
+  color: #960303;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 11px;
+  z-index: 4;
+}
+
+
+
+
+/*  para celular (dispositivos menores que 768px) */
+@media (max-width: 767px) {
+  .period-selector .option {
+    padding: 12px 11px !important;
+  }
+  .period-selector .option.promotion-5::after{
+    top: -10px;
+    right: 24px;
+  }
+  .period-selector .option.promotion-10::after{
+    top: -10px;
+    right: 25px;
+  }
+  .period-selector .option.promotion-20::after{
+    top: -10px;
+    right: 17px;
+  }  
+}
+
+.period-selector .option {
+  position: relative;
+  flex: 1; /* Faz com que cada opção ocupe um espaço igual */
+  text-align: center; /* Centraliza o texto dentro de cada botão */
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  top: 13px;
+  color: #333;
+  z-index: 2;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.period-selector .option:hover {
+  color: var(--primary-color-hover);
+}
+
+.period-selector .option.active {
+  color: white;
+  z-index: 3;
+}
+
+.period-selector .slide-indicator {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  height: 80%;
+  width: 24%;
+  background-color: var(--primary-color);
+  border-radius: 21px;
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
+  border-bottom-right-radius: 21px;
+  border-bottom-left-radius: 21px;
+  z-index: 1;
+  transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out,
+    box-shadow 0.4s ease;
+  box-shadow: 0 4px 20px rgba(114, 0, 103, 0.3);
+}
+
+.period-selector .option.active {
+  transform: scale(1.05);
+}
+
+/* Estilos para a seção de filmes lançamentos */
+.top10-filmes-lancamentos-section {
+  background-color: var(--primary-color);
+  padding: 50px 0;
+  position: relative;
+}
+
+.top10-filmes-lancamentos-section h2 {
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.top10-filmes-lancamentos-section p {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.top10-filmes-lancamentos-section .btn {
+  background-color: #fff;
+  border: none;
+  color: var(--primary-color);
+  transition: background-color 0.3s ease;
+}
+
+.top10-filmes-lancamentos-section .btn:hover {
+  background-color: var(--primary-color-hover);
+  color: #fff;
+}
+
+/* Estilo das imagens dentro do carousel */
+.owl-carousel .item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.owl-carousel .item img:hover {
+  transform: scale(1.05);
+}
+
+
+.lucro-section {
+ 
+  padding: 50px 0;
+}
+
+.lucro-section h2 {
+  margin-bottom: 20px;
+}
+
+
+.lucro-section ul {
+  list-style: none;
+  padding-left: 0;
+  display: inline flow-root list-item;
+}
+
+.lucro-section ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.lucro-section ul li::before {
+  content: "\2714";
+  color: green;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.lucro-section .card {
+  background-color: var (--primary-color);
+
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.lucro-section .card h3 { 
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.lucro-section .card p {
+  margin-bottom: 15px;
+}
+
+.lucro-section .star-icon {
+  display: inline-block;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+@media (max-width: 768px) {
+  .lucro-section {
+      background: #f0f0f0;
+  }
+  .lucro-section .card {
+      background-color: #6610f2;
+      margin-top: 30px;
+  }
+}
+
+
+  /* Seção de contadores */
+  .stats-section {  
+    padding: 20px 0;
+}
+
+.stats-section .stat-card {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stats-section .stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #c9c9c9;
+}
+
+.stat-description {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .stat-description {
+        font-size: 16px;
+    }
+}
+
+.cardrevenda {
+  border: none;
+  border-radius: 10px;
+  background: #fff;
+  color:#4f074e
+}
+.cardcreditos {
+  border: none;
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
